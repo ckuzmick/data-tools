@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+const yargs = require('yargs/yargs')(process.argv.slice(2)).argv;
+
+if (yargs._[2] == null) {
+    console.log('Usage: data <command> [options]');
+    process.exit(1);
+}
+
+if (yargs._[3] == "-u") {
+    console.log('Usage: data <command> [options]');
+    process.exit(0);
+}
