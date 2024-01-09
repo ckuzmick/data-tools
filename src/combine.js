@@ -10,4 +10,7 @@ function main(key, inputPath1, inputPath2, outputPath) {
     const data2 = parseCSV(csv2);
 
     const combined = combine(data1, data2, key);
+
+    const final = unparseCSV(combined)
+    
 }

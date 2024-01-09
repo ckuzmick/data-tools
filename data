@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs/yargs')(process.argv.slice(2)).argv;
+const combine = require('./src/combine')
 
 if (yargs._[2] == null) {
     console.log('Usage: data <command> [options]');
