@@ -11,3 +11,8 @@ if (yargs._[3] == "-u") {
     console.log('Usage: data <command> [options]');
     process.exit(0);
 }
+
+if (yargs._[0] == null) {
+    console.log('Usage: data <command> [options]');
+    process.exit(1);
+}
