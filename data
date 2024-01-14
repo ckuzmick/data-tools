@@ -1,19 +1,8 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs/yargs')(process.argv.slice(2)).argv;
-const combine = require('./src/combine')
+const combine = require('./src/combine');
 
-if (yargs._[2] == null) {
-    console.log('Usage: data <command> [options]');
-    process.exit(1);
-}
-
-if (yargs._[3] == "-u") {
-    console.log('Usage: data <command> [options]');
-    process.exit(0);
-}
-
-if (yargs._[0] == null) {
-    console.log('Usage: data <command> [options]');
-    process.exit(1);
+if (yargs._[0] == "combine") {
+    combine(yargs._[1], yargs._[2], yargs._[3], yargs._[4])
 }

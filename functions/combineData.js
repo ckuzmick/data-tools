@@ -9,4 +9,8 @@ function main(data1, data2, key) {
             combined.push(lo.merge(row1, row2));
         }
     }
+
+    return combined;
 }
+
+module.exports = main;

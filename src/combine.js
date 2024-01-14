@@ -1,7 +1,9 @@
 const yargs = require('yargs/yargs')(process.argv.slice(2)).argv;
 const parseCSV = require('../functions/parseCSV');
+const unparseCSV = require('../functions/unparseCSV');
 const readFile = require('../functions/readFile');
-const combine = require('../functions/combineData');
+const combineData = require('../functions/combineData');
+const fs = require('fs');
 
 function main(key, inputPath1, inputPath2, outputPath) {
     const csv1 = readFile(inputPath1);
@@ -9,8 +11,12 @@ function main(key, inputPath1, inputPath2, outputPath) {
     const data1 = parseCSV(csv1);
     const data2 = parseCSV(csv2);
 
-    const combined = combine(data1, data2, key);
+    const combined = combineData(data1, data2, key);
 
-    const final = unparseCSV(combined)
-    
+    const final = unparseCSV(combined);
+
+    fs.writeFileSync(outputPath, final, 'utf8');
+    console.log(`merged ${inputPath1} and ${inputPath2} into ${outputPath} based on ${key}`);
 }
+
+module.exports = main;
