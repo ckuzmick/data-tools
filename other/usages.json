@@ -1,0 +1,12 @@
+[
+    {
+        "tool": "combine",
+        "args": [
+            {"1": "key column to combine off"},
+            {"2": "path 1, data will combine into here"},
+            {"3": "path 2, data from here will be scanned in"},
+            {"4": "output path"}
+        ],
+        "use": "combines 2 files based off a key"
+    }
+]

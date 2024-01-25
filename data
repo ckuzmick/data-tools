@@ -6,3 +6,7 @@ const combine = require('./src/combine');
 if (yargs._[0] == "combine") {
     combine(yargs._[1], yargs._[2], yargs._[3], yargs._[4])
 }
+
+if (yargs._[1] == "-u") {
+    
+}
